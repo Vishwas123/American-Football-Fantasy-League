@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+</script>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong>American Football Fantasy League</strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Leaderboard.html">Leaderboard</a></li>
+      <li><a href="Filter.html">Players List</a></li>
+      <li class="active"><a href="#">Featured</a></li> 
+      <li><a href="Teams.html">Points</a></li> 
+      <li><a href="MyTeam.html">My Team</a></li>
+      <li><a href="Rules.html">About</a></li>
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="SignUp.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<br><br><br><br><br><br><br><br>
+<center>
+<p><button onclick="clickCounter()" type="button" class="btn btn-primary">Click me!</button></p>
+<div id="result">
+    
+</div>
+<p>Click the button to see the counter increase.</p>
+<p><strong>This counter is created using localStorage</strong></p>
+<p>Counter stores the value even after refreshing or closing the browser </p>
+<p>Please use Chrome or Firefox, at times it won't work in IE</p>
+</center>
+
+</body>
+
+</html>

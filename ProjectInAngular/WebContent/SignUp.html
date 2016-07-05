@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html data-ng-app="mySign">
+<head>
+<title>Sign In Form</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+
+<style>
+  body{ background-color: lightblue; background-image: url("america.jpg");}
+</style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong>American Football Fantasy League</strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Leaderboard.html">Leaderboard</a></li> 
+      <li><a href="Filter.html">Players List</a></li>
+            <li><a href="Teams.html">Points</a></li> 
+      <li><a href="MyTeam.html">My Team</a></li>
+      
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li class="active"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+  </div>
+</nav>
+<br><br>
+
+<br><br><br>
+
+<br>
+
+
+<div class="container" data-ng-controller="Ctrl" align="center" padding="500px">
+<center>
+<div class="container">
+  <div class="jumbotron">
+    
+      <form action="index.html" method="POST" id="infoform" name="myForm"><br>
+
+      <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" style="width:25%">
+      </div>
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:25%">
+      </div>
+      <div class="progress-bar progress-bar-danger" role="progressbar" style="width:25%">
+      </div>
+      <div class="progress-bar progress-bar-info" role="progressbar" style="width:25%">
+      </div>
+      </div>
+
+
+      <h2><strong>Welcome Back! Please Sign In</strong></h2><br>
+
+      <strong><input type="text" class="form-control" placeholder="UserName" id="uName" data-ng-model="userName" required="valid" />
+      <br><br></strong>
+      <strong><input type="text" class="form-control" placeholder="Password" id="pName" ng-model="passWord" required="valid" />
+      <br><br></strong>
+      <button type="submit" class="btn btn-success btn-block" ng-click="saveData()">SUBMIT</button>
+      
+      
+
+      </form>
+      <button type="submit" class="btn btn-link btn-block" ng-click="index.html"><strong>No Account. Register Now?</strong></button>
+    </center>
+
+    <p>*Please use admin and admin as credentials to login*</p>
+  </div>
+
+
+<script>
+	angular.module('mySign', ['ngStorage']).
+      
+      controller('Ctrl', function($scope,$localStorage){
+        if(({{$scope.myForm.userName}} && {{$scope.myForm.passWord}}) == 'admin')
+        $scope.saveData = function(){
+        	alert('Yes');
+        }
+	});
+</script>
+
+</body>
+</html>

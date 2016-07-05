@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head>
+<title>Fantasy Cricket League</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+<style type="text/css"></style>
+<style>
+	h1{color: blue; vertical-align: bottom;}
+  @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+  body {
+  padding: 64px 0;
+  text-align: center;
+  background-color: lightblue;
+  }
+  .jumbotron{border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid; border-left: 6px solid orange; border-right: 6px solid orange; border-top: 6px solid orange; border-bottom: 6px solid orange;}
+  strong{color: #336600;}
+  .face-button {
+  height: 50px;
+  display: inline-block;
+  border: 3px solid #363845;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: #363845;
+  overflow: hidden;
+  
+  }
+  .face-button .icon {
+  margin-right: 5px;
+  
+  }
+  .face-button .face-primary, .face-button .face-secondary {
+  display: block;
+  padding: 0 32px;
+  line-height: 50px;
+  transition: margin .4s;
+ 
+  }
+  .face-button .face-primary {
+  background-color: #363845;
+  color: #FFF;
+  
+  }
+  .face-button:hover .face-primary {
+  margin-top: -50px;
+  }
+	
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" id="header">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong>American Football Fantasy League</strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="Leaderboard.html">Leaderboard</a></li>
+      <li><a href="Filter.html">Players List</a></li>
+      <li><a href="Teams.html">Points</a></li> 
+      <li><a href="MyTeam.html">My Team</a></li>
+      
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="SignUp.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<br>
+
+
+
+<div class="container">
+  <div class="jumbotron">
+  <img id="image" src="america.jpg" alt="Fantasy View" style="width:1000px;height:400px;">
+	<center>
+		<h2>American Football Fantasy League</h2>
+		<p>Choose your players, let them play and win points for you.</p>
+	</center>
+  </div>
+</div>
+
+
+<div class="container" data-ng-controller="MainController" align="center" padding="500px">
+
+<form action="MyTeam.html" method="POST" id="tName">
+
+  <strong>Enter Team Name: </strong><input type="text" ng-model="teamName" required="valid"/><br><br>
+ 
+  <button type="submit" class="btn btn-success btn-block" ng-click="saveData()">I am Set. Let us Play!</button><br>
+
+
+</form>
+
+<br><br><br><br>
+
+  
+<a class="face-button" href="#">
+ 
+  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Created By
+  </div>
+  
+  <div class="face-secondary" action="Leaderboard.html">
+    <span class="icon fa fa-hdd-o"></span>
+    Vishwas Gouru
+  </div>
+ 
+</a>
+
+</div>		
+<script>
+	angular.module('myApp', ['ngStorage'])
+      
+      .controller('MainController', function($scope,$localStorage){
+        $scope.saveData = function(){
+          if({{tName.teamName.$valid}})
+        	alert('Yes');
+        }
+        $scope.showData = function(){
+          alert('Done Yes');
+        }
+	});
+</script>
+
+</body>
+</html>

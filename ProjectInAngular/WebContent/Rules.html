@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html data-ng-app>
+<head>
+<title>Rules to play the game</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    p{background-color: lightgreen;}
+    button{align:center;}
+    body{background-image: url("america.jpg");}
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong>American Football Fantasy League</strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Leaderboard</a></li>
+      <li><a href="Filter.html">Players List</a></li>
+      <li><a href="Featured.html">Featured</a></li> 
+      <li><a href="Teams.html">Points</a></li> 
+      <li><a href="MyTeam.html">My Team</a></li>
+      <li class="active"><a href="#">About</a></li>
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="SignUp.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+  </div>
+</nav>
+<br><br><br>
+<br><br><br>
+
+<div class="container">
+  <div class="jumbotron">
+  <h1><center>Welcome to the <strong>Rules</strong> Section</center></h1>
+
+<center>
+<h2>Choose one pattern from the below</h2><br>
+  <p>--> <strong>4-Bat 4-Ball 2-All 1-Wic</strong></p>
+  <p>--> <strong>3-Bat 3-Ball 4-All 1-Wic</strong></p>
+  <p>--> <strong>4-Bat 3-Ball 3-All 1-Wic</strong></p>
+  <p>--> <strong>5-Bat 1-Ball 4-All 1-Wic</strong></p>
+</center>
+  </div>
+  
+</div>
+
+
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Application Details</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+          <h4 class="modal-title">Application Details</h4>
+        </div>
+        <div class="modal-body">
+          <p>My Body Parts are Angular.JS, HTML, CSS3, Bootstrap, JavaScript, JQuery, JQuery UI.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+</body>
+</html>

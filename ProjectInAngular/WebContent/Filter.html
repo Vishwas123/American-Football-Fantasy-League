@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html data-ng-app="sortApp">
+<head>
+<title>Interactive directory with Angular</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+ body { padding-top:50px; background-image: url("america.jpg");}
+ table{
+    width: 800px;
+    height: 80px;
+    padding: 20px;
+    border: 2px solid navy;
+    margin: 10px;
+    background-color: lightgrey;
+    font-weight: 5px;
+    
+}
+
+input{width:800px; height:40px;}
+</style> 
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong>American Football Fantasy League</strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Leaderboard.html">Leaderboard</a></li>
+      <li class="active"><a href="#">Players List</a></li>
+      <li><a href="Teams.html">Points</a></li> 
+      <li><a href="MyTeam.html">My Team</a></li>
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="SignUp.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<div class="container" data-ng-app="sortApp" data-ng-controller="mainController" align="center">
+  <h3>
+  <div class="alert alert-info">
+    <p>All Teams Players List</p>
+
+  </div>
+  
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" placeholder="Search using Name, Team or Price" ng-model="searchFish">
+        
+      </div>      
+    </div>
+  </form>
+  
+
+  <table class="table table-bordered" align="center">
+    
+    <tr bgcolor="green">
+        <td align="center">Player Name</td>
+        <td align="center">Price ($ in K)</td>
+        <td align="center">Team</td>
+      </tr>
+
+    <tbody>
+      <tr ng-repeat="roll in newyork | filter:searchFish">
+        <td align="center">{{ roll.name }}</td>
+        <td align="center">{{roll.price}}</td>
+        <td align="center">{{roll.team}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </h3>
+</div>
+
+<script> 
+ angular.module('sortApp', [])
+
+.controller('mainController', function($scope) {
+  $scope.sortType = 'team';
+  
+  $scope.newyork = [
+  {name:'Joe Namath',price:100,team:'NewYork'},
+  {name:'Curtis Martin',price:'105',team:'NewYork'},
+  {name:'Joe Klecko',price:'105',team:'NewYork'},
+  {name:'Larry Grantham',price:'105',team:'NewYork'},
+  {name:'Freeman McNeil',price:'80',team:'NewYork'},
+  {name:'Wesley Walker',price:'65',team:'NewYork'},
+  {name:'Marty Lyons',price:'100',team:'NewYork'},
+  {name:'Leon Hess',price:'105',team:'NewYork'},
+  {name:'Matt Snell',price:'100',team:'NewYork'},
+  {name:'Don Maynard',price:'105',team:'NewYork'},
+  {name:'Winston Hill',price:'100',team:'NewYork'},
+  {name:'Al Toon',price:'105',team:'NewYork'},
+  {name:'Joe Flacco',price:'100',team:'Baltimore'},
+  {name:'Jerrod Johnson',price:'105',team:'Baltimore'},
+  {name:'Josh Johnson',price:'105',team:'Baltimore'},
+  {name:'Javorius Allen ',price:'105',team:'Baltimore'},
+  {name:'Kenneth Dixon',price:'80',team:'Baltimore'},
+  {name:'Justin Forsett',price:'65',team:'Houston'},
+  {name:'Trent Richardson',price:'100',team:'Houston'},
+  {name:'Lorenzo Taliaferro',price:'105',team:'Houston'},
+  {name:'Kamar Aiken',price:'100',team:'Houston'},
+  {name:'Chris Moore',price:'105',team:'Houston'},
+  {name:'Steve Smith',price:'100',team:'Houston'},
+  {name:'Mike Wallace',price:'105',team:'Houston'},
+  ];
+
+});
+</script>
+</body>
+</html>

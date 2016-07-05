@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Interactive directory with Angular</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <style>
+  h1 { padding: .2em; margin: 0; background-color: lightgreen; }
+  .last{bottom:0px;}
+  #banner{margin-top: 0.9em;}
+  body{background-color: lightblue; background-image: url("america.jpg");}
+  tr{ border-top-style: solid;
+    border-right-style: dotted;
+    border-bottom-style: solid;
+    border-left-style: dotted; border-left: 6px solid orange;
+    background-color: lightgrey; padding:2em; }
+  li{font-color: lightblue;}
+  tr.head{background-color: lightgreen;}
+  #players { float:left; width: 900px; margin-left:4em; margin-right: 6em; font-size:20px; font-color:lightgreen; align:center; border-radius: 2px; margin-top: 2em; margin-bottom: 2em; background-color: #A2AB58;}
+  #cart { width: 600px; float: left; margin-top: 2em; align:center; font-size:40px; border-radius: 10px;background-color: #C1E1A6; }
+  /* style the list to maximize the droppable hitarea */
+  #cart ol { margin: 0; padding: 1em 0 1em 3em; font-size:20px; 
+    align:center; border-radius: 2px;background-color: lightgrey; 
+    border-top-style: solid;
+    border-right-style: dotted;
+    border-bottom-style: solid;
+    border-left-style: dotted; border-right: 6px solid orange;
+    }
+  
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong>American Football Fantasy League</strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Leaderboard.html">Leaderboard</a></li>
+      <li><a href="Filter.html">Players List</a></li>
+      
+      <li><a href="Teams.html">Points</a></li> 
+      <li class="active"><a href="#">My Team</a></li>
+      
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="SignUp.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+  </div>
+</nav>
+  
+<br>
+<img id="image" src="america.jpg" alt="Fantasy View" style="width:1950px;height:950px;"> 
+<h1 id="banner"><center>Select Your Team</center></h1>
+<div id="players">
+  <h1 class="ui-widget-header"> Drag and Drop Players </h1>
+  <div id="catalog">
+    
+  <h3>NewYork Jets</h3>
+    
+    <div>   
+    <table style="width:100%" class="dip" border="1">
+    <tr class="head"><td>Player Name</td><td>Price</td></tr>
+    <tr> <td>Joe Namath</td> <td>50</td> </tr>
+    <tr> <td>Curtis Marthin</td> <td>94</td> </tr>
+    <tr> <td>Joe Klecko</td> <td>94</td> </tr>
+    <tr> <td>Larry Grantham</td> <td>94</td> </tr>
+    <tr> <td>Freeman McNeil </td> <td>94</td> </tr>
+    <tr> <td>Wesley Walker</td> <td>94</td> </tr>
+    <tr> <td>Marty Lyons</td> <td>94</td> </tr>
+    <tr> <td>Leon Hess</td> <td>94</td> </tr>
+    <tr> <td>Matt Snell</td> <td>94</td> </tr>
+    <tr> <td>Don Maynard</td> <td>94</td> </tr>
+    <tr> <td>Winston Hill</td> <td>94</td> </tr>
+    <tr> <td>Al Toon</td> <td>94</td> </tr>
+
+    </table>
+    </div>
+ 
+    <h3>Baltimore Ravens</h3>
+    <div>
+    
+    <table style="width:100%">
+    <tr class="head"><td>Player Name</td><td>Price</td></tr>
+    <tr> <td>Joe Flacco </td> <td>50</td> </tr>
+    <tr> <td>Jerrod Johnson </td> <td>50</td> </tr>
+    <tr> <td>Josh Johnson </td> <td>50</td> </tr>
+    <tr> <td>Javorius Allen </td> <td>50</td> </tr>
+    <tr> <td>Kenneth Dixon </td> <td>50</td> </tr>
+    <tr> <td>Justin Forsett </td> <td>50</td> </tr>
+    <tr> <td>Trent Richardson </td> <td>50</td> </tr>
+    <tr> <td>Lorenzo Taliaferro </td> <td>50</td> </tr>
+    <tr> <td>Kamar Aiken </td> <td>50</td> </tr>
+    <tr> <td>Chris Moore </td> <td>50</td> </tr>
+    <tr> <td>Steve Smith </td> <td>50</td> </tr>
+    <tr> <td>Mike Wallace </td> <td>50</td> </tr>
+    
+    </table>
+    </div>
+    
+    <h3>Houston Texans</h3>
+    <div>
+    
+    <table style="width:100%">
+    <tr class="head"><td>Player Name</td><td>Price</td></tr>
+    <tr> <td>Brock Osweiler </td> <td>50</td> </tr>
+    <tr> <td>Tom Savage </td> <td>50</td> </tr>
+    <tr> <td>Brandon Weeden </td> <td>50</td> </tr>
+    <tr> <td>Alfred Blue </td> <td>50</td> </tr>
+    <tr> <td>Tyler Ervin </td> <td>50</td> </tr>
+    <tr> <td>Jonathan Grimes </td> <td>50</td> </tr>
+    <tr> <td>Kenny Hilliard </td> <td>50</td> </tr>
+    <tr> <td>Akeem Hunt </td> <td>50</td> </tr>
+    <tr> <td>Lamar Miller </td> <td>50</td> </tr>
+    <tr> <td>Jay Prosch</td> <td>50</td> </tr>
+    <tr> <td>Will Fulker </td> <td>50</td> </tr>
+    <tr> <td>Anthony Denham </td> <td>50</td> </tr>
+    
+    
+    </table>
+    </div>
+    
+    <h3>Kansas City Chiefs</h3>
+    <div>
+    
+    <table style="width:100%">
+    <tr class="head"><td>Player Name</td><td>Price</td></tr>
+    <tr> <td>Tyler Bray</td> <td>50</td> </tr>
+    <tr> <td>Kevin Hogan</td> <td>50</td> </tr>
+    <tr> <td>Aaron Murray</td> <td>50</td> </tr>
+    <tr> <td>Jamaal Charles</td> <td>50</td> </tr>
+    <tr> <td>Knile Davis</td> <td>50</td> </tr>
+    <tr> <td>Trey Millard</td> <td>50</td> </tr>
+    <tr> <td>Chris Conley</td> <td>50</td> </tr>
+    <tr> <td>Jeremy Maclin</td> <td>50</td> </tr>
+    <tr> <td>Rod Streater</td> <td>50</td> </tr>
+    <tr> <td>Travis Kelce</td> <td>50</td> </tr>
+    <tr> <td>Jordan Devey</td> <td>50</td> </tr>
+    <tr> <td>Eric Fisher</td> <td>50</td> </tr>
+    
+    </table>
+    </div>
+ 
+</div>
+</div>
+
+
+<div id="cart" align="left">
+  <h1 class="ui-widget-header">Your playing 11</h1>
+  <div class="ui-widget-content">
+    <ol>
+      <tr>
+        <li class="placeholder"><h2>Drag Players here</h2></li>
+      </tr>
+    </ol>
+  </div>
+  <form>
+  <button type="submit" class="btn btn-success btn-block" id="select">Let's Play with this team</button>
+  </form>
+
+  
+</div>
+<br><br><br>
+
+
+
+<form class="last" action="Leaderboard.html">
+<button type="submit" class="btn btn-success btn-block">Selected Team</button>
+</form>
+<div class="contain">
+<ul>
+  <li></li>
+</ul>
+</div>
+
+
+
+<div id="dialog" title="Team is Created">
+
+</div>
+<div id="dialog1" title="Please select 11 players">
+</div>
+
+
+ <script>
+  $(function() {
+    
+    var array = [];
+    var limit = 11;
+    var counter = 0;
+    
+    $("#image").mouseover(function(){
+    $(this).remove();
+    });
+    
+
+    $( "#catalog" ).accordion();  
+    $( "#catalog tr" ).draggable({
+    appendTo: "body",
+    helper: "clone"
+    });
+    
+    $( "#cart ol" ).droppable({
+    activeClass: "ui-state-default",
+    hoverClass: "ui-state-hover",
+    accept: ":not(.ui-sortable-helper)",
+    
+    drop: function( event, ui ) {
+        $( this ).find( ".placeholder" ).remove();
+        $( "<li></li>" ).text( ui.draggable.text() ).appendTo( this );
+    counter++;
+  
+    $(ui.helper).remove(); //destroy clone
+
+    $(ui.draggable).remove(); //remove from list
+    
+  $( "#select" ).click(function() {
+    
+    if(counter == limit)
+    {
+      $(this).droppable("disable");
+    }
+    else
+    {
+      $( "#dialog1").dialog();
+      return false;
+      
+    }
+  });
+    }
+  
+    }).sortable({
+      items: "li:not(.placeholder)",
+      sort: function() {
+        $( this ).removeClass( "ui-state-default" );
+      }
+    });
+  });
+  </script>
+  <script>
+  angular.module('myTeam',[])
+  .Controller('TeamController',function($scope,$localStorage){
+  $scope.saveData = function()
+  {
+  alert('Let us Play');
+  }
+  
+  });
+  </script>
+</body>
+</html>

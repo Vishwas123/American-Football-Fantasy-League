@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+<style>
+body{background-image: url("america.jpg");}
+#but{width: 500px;}
+  #chart{border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid; border-left: 6px solid orange; border-right: 6px solid orange; border-top: 6px solid orange; border-bottom: 6px solid orange;}
+  .face-button {
+  height: 50px;
+  display: inline-block;
+  border: 3px solid #363845;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: #363845;
+  overflow: hidden;
+  
+  }
+  .face-button .icon {
+  margin-right: 5px;
+  
+  }
+  .face-button .face-primary, .face-button .face-secondary {
+  display: block;
+  padding: 0 32px;
+  line-height: 50px;
+  transition: margin .4s;
+ 
+  }
+  .face-button .face-primary {
+  background-color: #363845;
+  color: #FFF;
+  
+  }
+  .face-button:hover .face-primary {
+  margin-top: -50px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" id="header">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong>American Football Fantasy League</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="#">Leaderboard</a></li>
+      <li><a href="Filter.html">Players List</a></li>
+      
+      <li><a href="Teams.html">Points</a></li> 
+      <li><a href="MyTeam.html">My Team</a></li>
+      
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="SignUp.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<br>
+<br><br>
+<div class="container">
+  <div class="jumbotron" id="chart">
+  
+  <h2 align="center">Leaderboard Scores</h2>
+<div class="progress">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+    <span class="sr-only"></span>
+  </div>
+</div>
+	<center>
+		<button type="button" id="but" class="btn btn-success">Vamshi Krishna <span class="badge">100</span></button><br><br>
+		<button type="button" id="but" class="btn btn-success">Anil Nag <span class="badge">95</span></button><br><br>
+		<button type="button" id="but" class="btn btn-success">Uday Kumar <span class="badge">90</span></button><br><br>
+		<button type="button" id="but" class="btn btn-success">Sannith <span class="badge">85</span></button><br><br>
+		<button type="button" id="but" class="btn btn-success">Avinash <span class="badge">80</span></button><br><br>
+		<button type="button" id="but" class="btn btn-success">Rajesh <span class="badge">75</span></button><br><br>
+		<button type="button" id="but" class="btn btn-success">Sree Harsha <span class="badge">70</span></button><br><br>
+		<button type="button" id="but" class="btn btn-success">Vinod <span class="badge">55</span></button><br><br>
+		<button type="button" id="but" class="btn btn-success">Shiva <span class="badge">50</span></button><br><br>
+		<button type="button" id="but" class="btn btn-success">Narendra <span class="badge">100</span></button><br><br>	
+	</center>
+
+
+  </div>
+  
+  </div>
+
+
+ </body>
+ </html>
+</a>

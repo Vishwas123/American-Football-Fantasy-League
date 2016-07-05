@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head>
+<title>Fantasy Cricket League</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+<style type="text/css"></style>
+<style>
+  h1{color: blue; vertical-align: bottom;}
+  @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+  body {
+  padding: 64px 0;
+  text-align: center;
+  background-color: #996600;
+  background-image: url("america.jpg");
+  }
+  .face-button {
+    width: 1500px;
+  height: 50px;
+  display: inline-block;
+  border: 3px solid #363845;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: #363845;
+  overflow: hidden;
+  
+  }
+  .face-button .icon {
+    width: 1500px;
+  margin-right: 5px;
+  
+  }
+  .face-button .face-primary, .face-button .face-secondary {
+  display: block;
+  width: 1500px;
+  padding: 0 32px;
+  line-height: 50px;
+  transition: margin .4s;
+ 
+  }
+  .face-button .face-primary {
+    width: 1500px;
+  background-color: #363845;
+  color: #FFF;
+  
+  }
+  .face-button:hover .face-primary {
+    width: 1500px;
+  margin-top: -50px;
+  }
+  
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" id="header">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><strong>American Football Fantasy League</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Leaderboard.html">Leaderboard</a></li>
+      <li><a href="Filter.html">Players List</a></li>
+      
+      <li class="active"><a href="#">Points</a></li> 
+      <li><a href="MyTeam.html">My Team</a></li>
+      
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="SignUp.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<br>
+<br>
+
+ <div class="well">
+ <div class="progress">
+  <div class="progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:90%">
+  18 Points
+  </div>
+</div>
+ 
+ <a class="face-button" href="#">
+ 
+  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    NewYork Jets
+  </div>
+  
+  <div class="face-secondary" data-toggle="modal" data-target="#myModal">
+    <span class="icon fa fa-hdd-o"></span>
+    NewYork Jets Scheduled Games
+  </div>
+ 
+</a>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">NewYork Jets</h4>
+      </div>
+      <div class="modal-body">
+        <table border="1" align="center" width="350px">
+
+        <tr>
+          
+          <td>Date</td>
+          <td>Opponent</td>
+        </tr>
+
+        <tbody>
+          <tr><td> Aug 13 </td> <td>Detroit</td>  </tr>
+          <tr><td> Aug 21 </td> <td>Atlanta</td>  </tr>
+          <tr><td> Aug 29 </td> <td>New York</td>  </tr>
+          <tr><td> Sep 3 </td> <td>Philadelphia</td>  </tr>
+          <tr><td> Sep 13 </td> <td>Cleveland</td>  </tr>
+          <tr><td> Oct 4 </td> <td>Indianapolis</td>  </tr>
+          <tr><td> Oct 18 </td> <td>Miami</td>  </tr>
+          <tr><td> Oct 21 </td> <td>Washington</td>  </tr>
+          <tr><td> Oct 25 </td> <td>New England</td>  </tr>
+          <tr><td> Nov 1 </td> <td>Oakland</td>  </tr>
+          <tr><td> Nov 8 </td> <td>Jacksonville</td>  </tr>
+          <tr><td> Nov 12 </td> <td>Buffalo</td>  </tr>
+          <tr><td> Nov 22 </td> <td>Houston</td>  </tr>
+          <tr><td> Nov 29 </td> <td>Miami</td>  </tr>
+          <tr><td> Dec 6 </td> <td>Tennesse</td>  </tr>
+          <tr><td> Dec 13 </td> <td>Dallas</td>  </tr>
+          <tr><td> Dec 27 </td> <td>New England</td>  </tr>
+          <tr><td> Jan 3 </td> <td>Buffalo</td>  </tr>
+        </tbody>
+
+
+
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div> 
+<br><br><br>
+<div class="well">
+<div class="progress">
+  <div class="progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+    14 Points
+  </div>
+</div>
+
+<a class="face-button" href="#">
+ 
+  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Houston Texans
+  </div>
+  
+  <div class="face-secondary" data-toggle="modal" data-target="#myModal2">
+    <span class="icon fa fa-hdd-o"></span>
+    Houston Texans Scheduled Games
+  </div>
+ 
+</a>
+
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Houston Texans</h4>
+      </div>
+      <div class="modal-body">
+      <table border="1" align="center" width="350px">
+
+        <tr>
+          
+          <td>Date</td>
+          <td>Opponent</td>
+        </tr>
+
+        <tbody>
+          <tr><td> Aug 13 </td> <td>Detroit</td>  </tr>
+          <tr><td> Aug 21 </td> <td>Atlanta</td>  </tr>
+          <tr><td> Aug 29 </td> <td>New York</td>  </tr>
+          <tr><td> Sep 3 </td> <td>Philadelphia</td>  </tr>
+          <tr><td> Sep 13 </td> <td>Cleveland</td>  </tr>
+          <tr><td> Oct 4 </td> <td>Indianapolis</td>  </tr>
+          <tr><td> Oct 18 </td> <td>Miami</td>  </tr>
+          <tr><td> Oct 21 </td> <td>Washington</td>  </tr>
+          <tr><td> Oct 25 </td> <td>New England</td>  </tr>
+          <tr><td> Nov 1 </td> <td>Oakland</td>  </tr>
+          <tr><td> Nov 8 </td> <td>Jacksonville</td>  </tr>
+          <tr><td> Nov 12 </td> <td>Buffalo</td>  </tr>
+          <tr><td> Nov 22 </td> <td>Houston</td>  </tr>
+          <tr><td> Nov 29 </td> <td>Miami</td>  </tr>
+          <tr><td> Dec 6 </td> <td>Tennesse</td>  </tr>
+          <tr><td> Dec 13 </td> <td>Dallas</td>  </tr>
+          <tr><td> Dec 27 </td> <td>New England</td>  </tr>
+          <tr><td> Jan 3 </td> <td>Buffalo</td>  </tr>
+        </tbody>
+
+
+
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+
+</div>
+
+
+<br><br><br>
+<div class="well">
+
+<div class="progress">
+  <div class="progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:50%">
+    10 Points
+  </div>
+</div>
+
+<a class="face-button" href="#">
+ 
+  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Baltimore Ravens
+  </div>
+  
+  <div class="face-secondary" data-toggle="modal" data-target="#myModal1">
+    <span class="icon fa fa-hdd-o"></span>
+    Baltimore Ravens Scheduled Games
+  </div>
+ 
+</a>
+
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Baltimore Ravens</h4>
+      </div>
+      <div class="modal-body">
+        <table border="1" align="center" width="350px">
+
+        <tr>
+          
+          <td>Date</td>
+          <td>Opponent</td>
+        </tr>
+
+        <tbody>
+          <tr><td> Aug 13 </td> <td>Detroit</td>  </tr>
+          <tr><td> Aug 21 </td> <td>Atlanta</td>  </tr>
+          <tr><td> Aug 29 </td> <td>New York</td>  </tr>
+          <tr><td> Sep 3 </td> <td>Philadelphia</td>  </tr>
+          <tr><td> Sep 13 </td> <td>Cleveland</td>  </tr>
+          <tr><td> Oct 4 </td> <td>Indianapolis</td>  </tr>
+          <tr><td> Oct 18 </td> <td>Miami</td>  </tr>
+          <tr><td> Oct 21 </td> <td>Washington</td>  </tr>
+          <tr><td> Oct 25 </td> <td>New England</td>  </tr>
+          <tr><td> Nov 1 </td> <td>Oakland</td>  </tr>
+          <tr><td> Nov 8 </td> <td>Jacksonville</td>  </tr>
+          <tr><td> Nov 12 </td> <td>Buffalo</td>  </tr>
+          <tr><td> Nov 22 </td> <td>Houston</td>  </tr>
+          <tr><td> Nov 29 </td> <td>Miami</td>  </tr>
+          <tr><td> Dec 6 </td> <td>Tennesse</td>  </tr>
+          <tr><td> Dec 13 </td> <td>Dallas</td>  </tr>
+          <tr><td> Dec 27 </td> <td>New England</td>  </tr>
+          <tr><td> Jan 3 </td> <td>Buffalo</td>  </tr>
+        </tbody>
+
+
+
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+
+</div>
+<br><br><br>
+<div class="well">
+
+<div class="progress">
+  <div class="progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:30%">
+    6 Points
+  </div>
+</div>
+
+<a class="face-button" href="#">
+ 
+  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    Kansas City Shields
+  </div>
+  
+  <div class="face-secondary" data-toggle="modal" data-target="#myModal3">
+    <span class="icon fa fa-hdd-o"></span>
+    Kansas City Shields Scheduled Games
+  </div>
+ 
+</a>
+
+<div id="myModal3" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Matches List of Kansas City Shield</h4>
+      </div>
+      <div class="modal-body">
+        <table border="1" align="center" width="350px">
+
+        <tr>
+          
+          <td>Date</td>
+          <td>Opponent</td>
+        </tr>
+
+        <tbody>
+          <tr><td> Aug 13 </td> <td>Detroit</td>  </tr>
+          <tr><td> Aug 21 </td> <td>Atlanta</td>  </tr>
+          <tr><td> Aug 29 </td> <td>New York</td>  </tr>
+          <tr><td> Sep 3 </td> <td>Philadelphia</td>  </tr>
+          <tr><td> Sep 13 </td> <td>Cleveland</td>  </tr>
+          <tr><td> Oct 4 </td> <td>Indianapolis</td>  </tr>
+          <tr><td> Oct 18 </td> <td>Miami</td>  </tr>
+          <tr><td> Oct 21 </td> <td>Washington</td>  </tr>
+          <tr><td> Oct 25 </td> <td>New England</td>  </tr>
+          <tr><td> Nov 1 </td> <td>Oakland</td>  </tr>
+          <tr><td> Nov 8 </td> <td>Jacksonville</td>  </tr>
+          <tr><td> Nov 12 </td> <td>Buffalo</td>  </tr>
+          <tr><td> Nov 22 </td> <td>Houston</td>  </tr>
+          <tr><td> Nov 29 </td> <td>Miami</td>  </tr>
+          <tr><td> Dec 6 </td> <td>Tennesse</td>  </tr>
+          <tr><td> Dec 13 </td> <td>Dallas</td>  </tr>
+          <tr><td> Dec 27 </td> <td>New England</td>  </tr>
+          <tr><td> Jan 3 </td> <td>Buffalo</td>  </tr>
+        </tbody>
+
+
+
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+
+</div>
+
+</div>    
+<script>
+  angular.module('myApp', ['ngStorage'])
+        
+      .controller('MainController', function($scope,$localStorage){
+        $scope.saveData = function(){
+          if({{tName.teamName.$valid}})
+          alert('Yes');
+        }
+        $scope.showData = function(){
+          alert('Done Yes');
+        }
+  });
+</script>
+
+</body>
+</html>
