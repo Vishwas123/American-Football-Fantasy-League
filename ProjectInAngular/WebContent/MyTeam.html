@@ -166,12 +166,35 @@
     </ol>
   </div>
   <form>
-  <button type="submit" class="btn btn-success btn-block" id="select">Let's Play with this team</button>
+  <button type="submit" class="btn btn-success btn-block" id="select" data-toggle="modal" data-target="#myModal">Let's Play with this team</button>
   </form>
 
   
 </div>
 <br><br><br>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Selected Team</h4>
+      </div>
+      <div class="modal-body">
+      
+       <p id="demo">  </p>
+      
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+  </div>
 
 
 
@@ -220,6 +243,8 @@
         $( this ).find( ".placeholder" ).remove();
         $( "<li></li>" ).text( ui.draggable.text() ).appendTo( this );
     counter++;
+    array.push(ui.draggable.text());
+    document.getElementById("demo").innerHTML = array;
   
     $(ui.helper).remove(); //destroy clone
 
